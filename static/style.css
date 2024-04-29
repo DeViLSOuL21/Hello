@@ -1,0 +1,18 @@
+  body {
+    background-image: url('https://i.postimg.cc/bJ65D9Wq/A-P-Shah-Institute-Of-Technology-Jain-Religious-Minority-Institute-Thane.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .content-wrapper {
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: Add a semi-transparent white background to the content */
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .contact-info {
+    text-align: center;
+    font-family: Algerian;
+    font-size: 24px;
+  }

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration{% endblock title %}
+
+{% block body %}
+<div class="container-fluid px-0 mb-3" >
+    <img src="https://i.postimg.cc/t4zqKvxv/main4-0-1-1.jpg" class="d-block w-100 mx-0" alt="...">
+</div>
+<div class="container mb-3 py-4">
+    <h1 class="text-center font-size: 24px">Faculty Registration</h1>
+    <form method="POST" action={% url "registration" %}>
+    {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter your Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="text" class="form-control" id="Email" name="Email" placeholder="Enter Your Email">
+        </div>
+        <div class="form-group">
+            <label for="Choose">Department:</label>      
+            <select class="form-select" size="3" aria-label="Size 3 select example" name="Options" id="Options">
+                <option selected>Choose any ONE</option>
+                <option value="1">Information Technology</option>
+                <option value="2">Computer Science</option>
+                <option value="3">Data Science</option>
+                <option value="4">AIML</option>
+                <option value="5">Mechanical</option>
+                <option value="6">Civil</option>
+            </select>
+        </div>
+     <div class="form-group">
+            <label for="Choose">Prefer to coordinate for:</label>      
+            <select class="form-select" size="3" aria-label="Size 3 select example" name="preference" id="Options">
+                <option selected>Choose any ONE</option>
+                <option value="1">Seating Arrangement</option>
+                <option value="2">Catering Arrangement</option>
+                <option value="3">Venue Arrangement</option>
+                <option value="4">Manage Decorum</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+</div>
+{% endblock body %}
