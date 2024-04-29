@@ -9,39 +9,43 @@
 <div class="container mb-3 py-4">
     <h1 class="text-center" style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Volunteer</h1>
     <form method="POST" action="/volunteer">
-    {% csrf_token %}
+        {% csrf_token %}
         <div class="form-group">
             <label for="Name">Name</label>
-            <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter your Name">
+            <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter your Name" required>
         </div>
 
         <div class="form-group">
             <label for="Email">Email</label>
-            <input type="Email" class="form-control" id="Email" name="Email" placeholder="Enter Your Email">
+            <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter Your Email" required>
         </div>
-        <label for="Choose">Department:</label>      
-        <select class="form-select" size="3" aria-label="Size 3 select example" id="Options">
-            <option selected>Choose any ONE</option>
-            <option value="1">Information Technology</option>
-            <option value="2">Computer Science</option>
-            <option value="3">Data Science</option>
-            <option value="4">AIML</option>
-            <option value="5">Mechanical</option>
-            <option value="6">Civil</option>
-        </select>
         
         <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="phone" class="form-control" id="Phone" name="Phone" placeholder="Enter Your Phone Number">
+            <label for="Department">Department:</label>      
+            <select class="form-select" aria-label="Department" id="Department" name="Department" required>
+                <option >Choose any ONE</option>
+                <option value="IT">Information Technology</option>
+                <option value="CS">Computer Science</option>
+                <option value="DS">Data Science</option>
+                <option value="AIML">AIML</option>
+                <option value="MECH">Mechanical</option>
+                <option value="CIVIL">Civil</option>
+            </select>
         </div>
+        
         <div class="form-group">
-            <label for="Choose">Volunteer as:</label>      
-            <select class="form-select" size="3" aria-label="Size 3 select example" id="Options">
-                <option selected>Choose any ONE</option>
-                <option value="1">Security</option>
-                <option value="2">Hospitality</option>
-                <option value="3">Photography</option>
-                <option value="4">Cinematography</option>
+            <label for="Phone">Phone</label>
+            <input type="tel" class="form-control" id="Phone" name="Phone" placeholder="Enter Your Phone Number" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="Volunteer_as">Volunteer as:</label>      
+            <select class="form-select" aria-label="Volunteer as" id="Volunteer_as" name="Volunteer_as" required>
+                <option >Choose any ONE</option>
+                <option value="Security">Security</option>
+                <option value="Hospitality">Hospitality</option>
+                <option value="Photography">Photography</option>
+                <option value="Cinematography">Cinematography</option>
             </select>
         </div>
         <button class="btn btn-primary" type="submit">Submit</button>

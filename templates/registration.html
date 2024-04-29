@@ -19,28 +19,29 @@
             <input type="text" class="form-control" id="Email" name="Email" placeholder="Enter Your Email">
         </div>
         <div class="form-group">
-            <label for="Choose">Department:</label>      
-            <select class="form-select" size="3" aria-label="Size 3 select example" name="Options" id="Options">
-                <option selected>Choose any ONE</option>
-                <option value="1">Information Technology</option>
-                <option value="2">Computer Science</option>
-                <option value="3">Data Science</option>
-                <option value="4">AIML</option>
-                <option value="5">Mechanical</option>
-                <option value="6">Civil</option>
+            <label for="Department">Department:</label>      
+            <select class="form-select" aria-label="Department" id="Department" name="Department" required>
+                <option >Choose any ONE</option>
+                <option value="IT">Information Technology</option>
+                <option value="CS">Computer Science</option>
+                <option value="DS">Data Science</option>
+                <option value="AIML">AIML</option>
+                <option value="MECH">Mechanical</option>
+                <option value="CIVIL">Civil</option>
             </select>
         </div>
+        
      <div class="form-group">
-            <label for="Choose">Prefer to coordinate for:</label>      
-            <select class="form-select" size="3" aria-label="Size 3 select example" name="preference" id="Options">
-                <option selected>Choose any ONE</option>
-                <option value="1">Seating Arrangement</option>
-                <option value="2">Catering Arrangement</option>
-                <option value="3">Venue Arrangement</option>
-                <option value="4">Manage Decorum</option>
-            </select>
-        </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <label for="preference">Prefer to coordinate for:</label>
+        <select class="form-select" aria-label="Prefer to coordinate for" id="preference" name="preference">
+            <option selected disabled>Choose any ONE</option>
+            <option value="Seating_Arrangement">Seating Arrangement</option>
+            <option value="Catering_Arrangement">Catering Arrangement</option>
+            <option value="Venue_Arrangement">Venue Arrangement</option>
+            <option value="Manage_Decorum">Manage Decorum</option>
+        </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 
 </div>

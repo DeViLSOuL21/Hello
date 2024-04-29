@@ -5,9 +5,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, HttpResponse
 from datetime import datetime
-from home.models import Volunteer
-from home.models import Alumni
-from home.models import Registration
+from .models import *
 
 # Create your views here.
 def index(request):
@@ -39,10 +37,11 @@ def add_volunteer(request):
         Volunteer_as = request.POST.get('Volunteer_as')
         print(Name,Email,Phone,Volunteer_as)
     
-        vi = Volunteer(Email=Email, Phone=Phone, Volunteer_as=Volunteer_as, date=datetime.today(),Name = Name, Department=Department)
-        vi.save()
+        Volunteer.objects.create(Email=Email, Phone=Phone, Volunteer_as=Volunteer_as, date=datetime.today(),Name = Name, Department=Department)
           # Redirect to a success URL after saving
     return render(request, 'volunteer.html')
+
+from django.shortcuts import redirect
 
 def add_alumnis(request):
     if request.method == "POST":
@@ -50,14 +49,11 @@ def add_alumnis(request):
         Email = request.POST.get('Email')
         Phone = request.POST.get('Phone')
         Department = request.POST.get('Department')
-        Abroad = request.POST.get('Department')
-
-
-        alumni_instance = Alumni(Name=Name, Email=Email,Phone=Phone,Department=Department,Abroad=Abroad)
-        alumni_instance.save()
-        
-        return ('success_url')  # Redirect to a success URL after saving
+        Abroad = request.POST.get('Abroad')
+        Alumni.objects.create(Name=Name, Email=Email, Phone=Phone, Department=Department, Abroad=Abroad)
+          # Redirect to a success URL after saving
     return render(request, 'alumni.html')
+
 
 def add_registrations(request):
 
@@ -67,16 +63,9 @@ def add_registrations(request):
         Department = request.POST.get('Department')
         Options = request.POST.get('Options')
         preference= request.POST.get('preference')
-
-        registration= Registration(
-            Email=Email,
-            Department=Department,
-            Options=Options,
-            Name=Name,
-            preference=preference
-        )
+        print(Name,Email,Department,Options,preference)
+        Registration.objects.create(Email=Email,Department=Department,Name=Name,preference=preference,date=datetime.today())
         
-        registration.save()
           # Redirect to a success URL after saving
     return render(request, 'registration.html')  
 

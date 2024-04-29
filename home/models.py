@@ -25,6 +25,5 @@ class Registration(models.Model):
     Name = models.CharField(max_length=122)
     Email = models.CharField(max_length=122)
     Department = models.CharField(max_length=12)
-    Options = models.CharField(max_length=100)
     date = models.DateField()
     preference=models.CharField(max_length=100)    
